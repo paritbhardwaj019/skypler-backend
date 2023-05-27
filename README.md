@@ -1,4 +1,4 @@
-# Mynd : Backend Application
+# Skypler : Backend Application
 
 Backend server application for mynd health app.
 
