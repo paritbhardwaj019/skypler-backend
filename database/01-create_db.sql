@@ -1,2 +1,2 @@
-CREATE DATABASE mynd_db;
-USE mynd_db;
+CREATE DATABASE skypler_db;
+USE skypler_db;

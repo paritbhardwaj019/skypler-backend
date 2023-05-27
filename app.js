@@ -5,11 +5,8 @@ const app = express();
 app.use(express.json());
 
 // Routes
-const adminRoutes = require("./routes/admin_routes");
-const adminRoutes = require("./routes/admin_routes");
-
-app.use("/admin", adminRoutes);
-app.use("/email", mailRoutes);
+const authRoutes = require("./routes/auth_route");
+app.use("/auth", authRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
