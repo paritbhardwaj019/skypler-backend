@@ -14,3 +14,5 @@ INSERT INTO role_master (roleDesc) VALUES
 ('Administrator'),
 ('Accountant'),
 ('Engineer');
+('Project Manager'),
+('HR');
