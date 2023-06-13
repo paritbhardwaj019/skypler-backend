@@ -13,5 +13,6 @@ SELECT * FROM role_master;
 INSERT INTO role_master (roleDesc) VALUES
 ('Administrator'),
 ('Project Manager'),
-('Site Supervisor'),
-('Accountant');
+('Engineer'),
+('Accountant'),
+('HR');
