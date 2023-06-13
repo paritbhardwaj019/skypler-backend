@@ -32,7 +32,14 @@ module.exports = {
   },
 
   //signup:create User
-  createUser: async ({ name, email, hashedPassword, phone, roleId }) => {
+  createUser: async ({
+    name,
+    email,
+    hashedPassword,
+    phone,
+    roleId,
+    profileImage,
+  }) => {
     console.log("here in service");
     return new Promise((resolve, reject) => {
       connectionPool.getConnection((err, connection) => {
@@ -42,14 +49,15 @@ module.exports = {
           hashedPassword,
           phone,
           roleId,
+          profileImage,
         });
         if (err) throw err;
         const insertQuery =
-          "INSERT INTO users (name, email,password, phone,roleId) VALUES (?,? ,?,?, ?)";
+          "INSERT INTO users (name, email,password, phone,roleId, profileImage) VALUES (?,? ,?,?, ?, ?)";
 
         connection.query(
           insertQuery,
-          [name, email, hashedPassword, phone, roleId],
+          [name, email, hashedPassword, phone, roleId, profileImage],
           (err, results) => {
             connection.release();
             if (err) {

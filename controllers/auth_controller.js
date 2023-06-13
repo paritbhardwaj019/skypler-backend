@@ -1,5 +1,13 @@
 //custom modules
 const authService = require("../services/auth_service");
+const cloudinary = require("cloudinary").v2;
+const fs = require("fs");
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 //modules import
 const bcrypt = require("bcryptjs");
@@ -19,6 +27,9 @@ module.exports = {
           .status(400)
           .json({ success: false, message: "User already exists" });
 
+      const { secure_url } = await cloudinary.uploader.upload(req.file.path);
+      fs.unlinkSync(req.file.path);
+
       //password
       const hashedPassword = await bcrypt.hash(password, 12);
       console.log("hashedPAssword", hashedPassword);
@@ -29,6 +40,7 @@ module.exports = {
         hashedPassword,
         phone,
         roleId,
+        profileImage: secure_url,
       });
 
       res.status(201).json({ data: { userId: newUser }, success: true });
