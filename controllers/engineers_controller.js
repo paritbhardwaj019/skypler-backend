@@ -1,9 +1,10 @@
 const engineerService = require("../services/engineer_service");
+const userService = require("../services/user_service");
 
 module.exports = {
   fetchAllEngineer: async (req, res) => {
     try {
-      const engineers = await engineerService.getAllUserByAccountType(3);
+      const engineers = await userService.getAllUserByAccountType(3);
 
       res.status(200).json({
         success: true,
