@@ -19,7 +19,7 @@ app.use("/auth", authRoutes);
 app.use("/engineers", engineersRoutes);
 app.use("/project-managers", usersRoutes);
 app.use("/projects", projectRoutes);
-app.use("/projects", materialRoute);
+app.use("/materials", materialRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
