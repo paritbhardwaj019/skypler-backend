@@ -14,10 +14,12 @@ const projectRoutes = require("./routes/projects_routes");
 const authRoutes = require("./routes/auth_route");
 const engineersRoutes = require("./routes/engineers_route");
 const usersRoutes = require("./routes/users_route");
+const materialRoute = require("./routes/material_route");
 app.use("/auth", authRoutes);
 app.use("/engineers", engineersRoutes);
 app.use("/project-managers", usersRoutes);
 app.use("/projects", projectRoutes);
+app.use("/projects", materialRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
