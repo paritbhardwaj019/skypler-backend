@@ -1,5 +1,5 @@
 CREATE TABLE materials (
-  material_id INT PRIMARY KEY,
+  material_id INT PRIMARY KEY auto_increment,
   project_id INT not null,
 
   material_type VARCHAR(255)not null,

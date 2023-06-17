@@ -16,11 +16,15 @@ const engineersRoutes = require("./routes/engineers_route");
 const usersRoutes = require("./routes/users_route");
 const materialRoute = require("./routes/material_route");
 const materialMasterRoute = require("./routes/material_master_route");
+const outOfficeRoute = require("./routes/out_office_route");
+const expensesRoute = require("./routes/expenses_route");
 app.use("/auth", authRoutes);
 app.use("/engineers", engineersRoutes);
 app.use("/project-managers", usersRoutes);
 app.use("/projects", projectRoutes);
+app.use("/expenses", expensesRoute);
 app.use("/materials", materialRoute);
+app.use("/out-office", outOfficeRoute);
 app.use("/material-master", materialMasterRoute);
 
 // Error handling middleware
