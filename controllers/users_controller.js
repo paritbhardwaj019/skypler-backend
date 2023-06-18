@@ -1,16 +1,15 @@
-const engineerService = require("../services/engineer_service");
 const userService = require("../services/user_service");
 
 module.exports = {
-  fetchAllEngineer: async (req, res) => {
+  fetchAllProjectManagers: async (req, res) => {
     try {
-      const engineers = await userService.getAllUserByAccountType(3);
+      const projectManagers = await userService.getAllUserByAccountType(4);
 
       res.status(200).json({
         success: true,
-        length: engineers.length,
+        length: projectManagers.length,
         data: {
-          engineers,
+          projectManagers,
         },
       });
     } catch (error) {
