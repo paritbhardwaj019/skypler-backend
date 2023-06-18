@@ -13,9 +13,11 @@ app.use(cors());
 const projectRoutes = require("./routes/projects_routes");
 const authRoutes = require("./routes/auth_route");
 const engineersRoutes = require("./routes/engineers_route");
+const profileRoutes = require("./routes/profile_routes");
 app.use("/auth", authRoutes);
 app.use("/engineers", engineersRoutes);
 app.use("/projects", projectRoutes);
+app.use("/profile", profileRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

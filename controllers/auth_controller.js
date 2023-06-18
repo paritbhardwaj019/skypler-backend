@@ -28,6 +28,7 @@ module.exports = {
           .json({ success: false, message: "User already exists" });
 
       const { secure_url } = await cloudinary.uploader.upload(req.file.path);
+      
       fs.unlinkSync(req.file.path);
 
       //password
