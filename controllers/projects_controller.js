@@ -51,19 +51,36 @@ module.exports = {
       });
     }
   },
-   getAllProjects: async (req, res) => {
+  getAllProjects: async (req, res) => {
     try {
       const projects = await projectService.getAllProjects();
       res.status(200).json({
         success: true,
-        message: 'Projects retrieved successfully',
+        message: "Projects retrieved successfully",
         projects,
       });
     } catch (error) {
-      console.log('Error:', error);
+      console.log("Error:", error);
       res.status(500).json({
         success: false,
-        message: 'Internal Server Error',
+        message: "Internal Server Error",
+      });
+    }
+  },
+
+  getBarChartData: async (req, res) => {
+    try {
+      const barData = await projectService.getProjectStatsByType();
+
+      res.status(200).json({
+        success: true,
+        barData,
+      });
+    } catch (error) {
+      console.log("Error:", error);
+      res.status(500).json({
+        success: false,
+        message: "Internal Server Error",
       });
     }
   },

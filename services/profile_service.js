@@ -16,6 +16,7 @@ module.exports = {
               reject(err);
               return;
             }
+            resolve(true);
           }
         );
       });

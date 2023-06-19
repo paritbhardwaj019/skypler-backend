@@ -87,13 +87,13 @@ INSERT INTO projects (project_name, project_type, project_description, start_dat
 
 ('Lakefront Villas', 'residential', 'Exquisite villas by the lakeside', '2024-08-05', '2023-11-30', 'William Roberts', 'Logan Ward', 'Lakeview Developers', 'Lucknow', 'Site AB', 10000000.00, 'Ongoing', 70, 'ABC Builders', 'Luxurious living with stunning lake views'),
 
-('Cityscape Plaza', 'commercial', 'Mixed-use complex with panoramic city views', '2024-09-15', '2023-12-31', 'Ella Wilson', 'Aiden Clark', 'Cityscape Developers', 'Jaipur', 'Site AC', 7000000.00, 'Completed', 100, 'XYZ Construction', 'A dynamic urban destination for work and play'),
+('Cityscape Plaza', 'other', 'Mixed-use complex with panoramic city views', '2024-09-15', '2023-12-31', 'Ella Wilson', 'Aiden Clark', 'Cityscape Developers', 'Jaipur', 'Site AC', 7000000.00, 'Completed', 100, 'XYZ Construction', 'A dynamic urban destination for work and play'),
 
 ('Mountainview Homes', 'residential', 'Homes nestled in the mountains', '2024-10-01', '2023-10-31', 'Mia Anderson', 'Henry Harris', 'Mountainview Builders', 'Shimla', 'Site AD', 9000000.00, 'Yet to Start', 0, 'ABC Builders', 'Secluded living amidst breathtaking mountain views'),
 
 ('Seaview Resort', 'commercial', 'Beachfront resort with panoramic ocean views', '2024-11-15', '2023-12-31', 'Liam Adams', 'Logan Wilson', 'Seaside Hospitality', 'Goa', 'Site AE', 4000000.00, 'On Hold', 30, 'XYZ Construction', 'A paradise for relaxation and rejuvenation'),
 
-('Metro Apartments', 'residential', 'Apartments connected to metro station', '2024-12-01', '2023-10-31', 'Isabella Johnson', 'Aiden Turner', 'Metro Developers', 'Coimbatore', 'Site AF', 7000000.00, 'Completed', 100, 'ABC Builders', 'Convenient urban living with seamless connectivity'),
+('Metro Apartments', 'other', 'Apartments connected to metro station', '2024-12-01', '2023-10-31', 'Isabella Johnson', 'Aiden Turner', 'Metro Developers', 'Coimbatore', 'Site AF', 7000000.00, 'Completed', 100, 'ABC Builders', 'Convenient urban living with seamless connectivity'),
 
 ('Heritage Mall Redevelopment', 'commercial', 'Redevelopment of a heritage mall', '2025-01-10', '2023-12-31', 'Noah Lewis', 'Henry Clark', 'Heritage Retail', 'Mysore', 'Site AG', 5000000.00, 'On Hold', 40, 'XYZ Construction', 'Reviving the historical charm while modernizing the facilities'),
 
@@ -101,9 +101,9 @@ INSERT INTO projects (project_name, project_type, project_description, start_dat
 
 ('Tech Valley Innovation Center', 'commercial', 'Innovation center for tech startups', '2025-03-01', '2023-12-31', 'Oliver Roberts', 'Henry Thompson', 'Tech Valley Inc', 'Pune', 'Site AI', 8000000.00, 'Completed', 100, 'XYZ Construction', 'Fostering innovation and entrepreneurship in the tech industry'),
 
-('Riverside Plaza Extension', 'commercial', 'Extension of riverside shopping complex', '2025-04-10', '2023-10-31', 'Sophia Wilson', 'Lily Clark', 'Riverfront Retail', 'Hyderabad', 'Site AJ', 12000000.00, 'Yet to Start', 0, 'ABC Builders', 'Enhancing shopping and entertainment experience by the river'),
+('Riverside Plaza Extension', 'educational', 'Extension of riverside shopping complex', '2025-04-10', '2023-10-31', 'Sophia Wilson', 'Lily Clark', 'Riverfront Retail', 'Hyderabad', 'Site AJ', 12000000.00, 'Yet to Start', 0, 'ABC Builders', 'Enhancing shopping and entertainment experience by the river'),
 
-('Greenwood Tower', 'commercial', 'Green-integrated tower for businesses', '2025-05-15', '2023-12-31', 'Emma Anderson', 'Aiden Harris', 'Greenwood Builders', 'Bangalore', 'Site AK', 15000000.00, 'Ongoing', 60, 'XYZ Construction', 'Promoting sustainability and environmental consciousness in business spaces'),
+('Greenwood Tower', 'other', 'Green-integrated tower for businesses', '2025-05-15', '2023-12-31', 'Emma Anderson', 'Aiden Harris', 'Greenwood Builders', 'Bangalore', 'Site AK', 15000000.00, 'Ongoing', 60, 'XYZ Construction', 'Promoting sustainability and environmental consciousness in business spaces'),
 
 ('Tech Hub Expansion', 'commercial', 'Expansion of technology hub', '2025-06-01', '2023-11-30', 'William Roberts', 'Henry Clark', 'Tech Innovators', 'Mumbai', 'Site AL', 9000000.00, 'Completed', 100, 'ABC Builders', 'Catering to the growing needs of the technology industry'),
 
@@ -113,8 +113,8 @@ INSERT INTO projects (project_name, project_type, project_description, start_dat
 
 ('Metropolitan Apartments', 'residential', 'Urban apartments with metropolitan charm', '2025-09-15', '2023-10-31', 'Mia Roberts', 'Liam Turner', 'Urban Developers', 'Chennai', 'Site AO', 8000000.00, 'Completed', 100, 'XYZ Construction', 'Modern living spaces in a bustling city'),
 
-('Tech Tower Two', 'commercial', 'Cutting-edge tech tower', '2025-10-01', '2023-12-31', 'Ella Wilson', 'Aiden Clark', 'Tech Innovations', 'Noida', 'Site AP', 10000000.00, 'Yet to Start', 0, 'ABC Builders', 'A landmark for technological advancements'),
+('Tech Tower Two', 'educational', 'Cutting-edge tech tower', '2025-10-01', '2023-12-31', 'Ella Wilson', 'Aiden Clark', 'Tech Innovations', 'Noida', 'Site AP', 10000000.00, 'Yet to Start', 0, 'ABC Builders', 'A landmark for technological advancements'),
 
 ('Riverfront Residences', 'residential', 'Riverside residences with serene views', '2025-11-15', '2023-12-31', 'Oliver Adams', 'Logan Harris', 'Riverfront Builders', 'Lucknow', 'Site AQ', 12000000.00, 'Ongoing', 70, 'XYZ Construction', 'Living in harmony with nature by the river'),
 
-('Cityscape Square', 'commercial', 'Dynamic cityscape-integrated complex', '2025-12-01', '2023-10-31', 'Sophia Anderson', 'Henry Turner', 'Cityscape Developers', 'Jaipur', 'Site AR', 5000000.00, 'Completed', 100, 'ABC Builders', 'An iconic destination blending cityscape and commercial spaces');
+('Cityscape Square', 'educational', 'Dynamic cityscape-integrated complex', '2025-12-01', '2023-10-31', 'Sophia Anderson', 'Henry Turner', 'Cityscape Developers', 'Jaipur', 'Site AR', 5000000.00, 'Completed', 100, 'ABC Builders', 'An iconic destination blending cityscape and commercial spaces');

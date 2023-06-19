@@ -75,4 +75,27 @@ module.exports = {
       });
     });
   },
+
+  getProjectStatsByType: () => {
+    return new Promise((resolve, reject) => {
+      connectionPool.getConnection((err, connection) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+
+        const getQuery =
+          "SELECT project_type, COUNT(*) as count FROM projects GROUP BY project_type ";
+
+        connection.query(getQuery, (err, results) => {
+          if (err) {
+            reject(err);
+            return;
+          }
+
+          resolve(results);
+        });
+      });
+    });
+  },
 };
