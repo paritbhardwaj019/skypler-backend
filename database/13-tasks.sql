@@ -1,0 +1,6 @@
+CREATE TABLE tasks (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  task VARCHAR(255) NOT NULL,
+  status TINYINT(1) NOT NULL DEFAULT 0,
+  assigned_to INT
+)

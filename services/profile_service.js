@@ -11,12 +11,28 @@ module.exports = {
           updateQuery,
           [data.name, data.roleId, data.profileImage, userID],
           (err, results) => {
-            connection.release();
             if (err) {
               reject(err);
               return;
             }
-            resolve(true);
+            connection.query(
+              "SELECT * FROM users WHERE id = ?",
+              userID,
+              (err, results) => {
+                if (err) {
+                  reject(err);
+                  return;
+                }
+
+                if (results.length === 0) {
+                  res.status(404).json({ error: "User not found" });
+                  return;
+                }
+
+                const updatedUser = results[0];
+                resolve(updatedUser);
+              }
+            );
           }
         );
       });

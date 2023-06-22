@@ -19,6 +19,7 @@ const materialRoute = require("./routes/material_route");
 const materialMasterRoute = require("./routes/material_master_route");
 const outOfficeRoute = require("./routes/out_office_route");
 const expensesRoute = require("./routes/expenses_route");
+const taskRoute = require("./routes/tasks_routes");
 app.use("/auth", authRoutes);
 app.use("/engineers", engineersRoutes);
 app.use("/project-managers", usersRoutes);
@@ -28,6 +29,7 @@ app.use("/expenses", expensesRoute);
 app.use("/materials", materialRoute);
 app.use("/out-office", outOfficeRoute);
 app.use("/material-master", materialMasterRoute);
+app.use("/tasks", taskRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

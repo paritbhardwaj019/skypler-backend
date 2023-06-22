@@ -1,10 +1,12 @@
 const profileService = require("../services/profile_service");
 const cloudinary = require("cloudinary").v2;
+const fs = require("fs");
 
 async function updateProfile(req, res) {
   try {
     const userID = req.headers["authorization"].toString().split(" ")[1];
     const { secure_url } = await cloudinary.uploader.upload(req.file.path);
+    fs.unlinkSync(req.file.path);
 
     const data = {
       name: req.body.name,
