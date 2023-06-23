@@ -19,3 +19,4 @@ Backend server application for mynd health app.
 `services`: Contains service files that encapsulate complex business logic or third-party integrations. These files are called by controllers to perform specific tasks.
 
 `utils`: Contains utility files that provide helper functions or utilities that are used across the application, such as error handling functions, utility functions, or validation functions.
+1
