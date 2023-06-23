@@ -24,4 +24,27 @@ module.exports = {
       });
     });
   },
+  getAllExpense: async () => {
+    return new Promise((resolve, reject) => {
+      connectionPool.getConnection((err, connection) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+
+        const getQuery = "SELECT * FROM expenses";
+
+        connection.query(getQuery, (err, results) => {
+          connection.release();
+
+          if (err) {
+            reject(err);
+            return;
+          }
+
+          resolve(results);
+        });
+      });
+    });
+  },
 };
