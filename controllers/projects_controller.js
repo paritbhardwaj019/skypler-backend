@@ -84,4 +84,32 @@ module.exports = {
       });
     }
   },
+
+  getProjectById: async (req, res) => {
+    const { projectId } = req.params; // Assuming the project ID is passed as a parameter in the URL
+
+    try {
+      const project = await projectService.getProjectById(projectId);
+
+      if (!project) {
+        res.status(404).json({
+          success: false,
+          message: "Project not found",
+        });
+        return;
+      }
+
+      res.status(200).json({
+        success: true,
+        message: "Project retrieved successfully",
+        project,
+      });
+    } catch (error) {
+      console.log("Error:", error);
+      res.status(500).json({
+        success: false,
+        message: "Internal Server Error",
+      });
+    }
+  },
 };

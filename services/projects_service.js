@@ -120,4 +120,27 @@ module.exports = {
       });
     });
   },
+
+  getProjectById: (projectId) => {
+    return new Promise((resolve, reject) => {
+      connectionPool.getConnection((err, connection) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+
+        const selectQuery = "SELECT * FROM projects WHERE project_id = ?";
+        connection.query(selectQuery, [projectId], (err, results) => {
+          connection.release();
+
+          if (err) {
+            reject(err);
+            return;
+          }
+
+          resolve(results[0]); // Assuming project ID is unique, return the first result
+        });
+      });
+    });
+  },
 };
