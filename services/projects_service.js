@@ -98,4 +98,26 @@ module.exports = {
       });
     });
   },
+
+  deleteProjectById: (id) => {
+    return new Promise((resolve, reject) => {
+      connectionPool.getConnection((err, connection) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+
+        const deleteQuery = "DELETE FROM projects WHERE project_id = ?";
+
+        connection.query(deleteQuery, [id], (err, results) => {
+          if (err) {
+            reject(err);
+            return;
+          }
+
+          resolve(true);
+        });
+      });
+    });
+  },
 };

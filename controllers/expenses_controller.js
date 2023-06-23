@@ -4,6 +4,7 @@ module.exports = {
   fetchExpensesByProjectId: async (req, res) => {
     try {
       const projectId = req.query.project_id;
+      console.log(projectId);
       const expenses = await expensesService.getExpensesByProjectId(projectId);
 
       res.status(200).json({
