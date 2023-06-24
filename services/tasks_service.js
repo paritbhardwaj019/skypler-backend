@@ -2,6 +2,7 @@ const connectionPool = require("./db_service");
 
 module.exports = {
   createTask: (data) => {
+    console.log(data);
     return new Promise((resolve, reject) => {
       connectionPool.getConnection((err, connection) => {
         if (err) {
@@ -10,13 +11,14 @@ module.exports = {
         }
 
         const createQuery =
-          "INSERT INTO tasks (task, assigned_to) VALUES (?,?)";
-
+          "INSERT INTO tasks (project_id,task, assigned_to,status) VALUES (?,?,?,?)";
+        console.log(data.project_id, data.task, data.assigned_to, data.status);
         connection.query(
           createQuery,
-          [data.task, data.assigned_to],
+          [data.project_id, data.task, data.assigned_to, data.status],
           (err, results) => {
             if (err) {
+              console.log(err);
               reject(err);
               return;
             }
@@ -59,11 +61,12 @@ module.exports = {
           return;
         }
 
-        const updateQuery = "UPDATE tasks SET status = ? WHERE id = ?";
+        const updateQuery =
+          "UPDATE tasks SET status = ?,assigned_to=? WHERE id = ?";
 
         connection.query(
           updateQuery,
-          [data.status, data.id],
+          [data.status, data.assigned_to, data.id],
           (err, results) => {
             if (err) {
               reject(err);
@@ -75,6 +78,27 @@ module.exports = {
             resolve(results[0]);
           }
         );
+      });
+    });
+  },
+  getAllTasksByProjectId: (projectId) => {
+    return new Promise((resolve, reject) => {
+      connectionPool.getConnection((err, connection) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+
+        const getQuery = "SELECT * FROM tasks WHERE Project_id = ?";
+
+        connection.query(getQuery, [projectId], (err, results) => {
+          if (err) {
+            reject(err);
+            return;
+          }
+
+          resolve(results);
+        });
       });
     });
   },
