@@ -9,7 +9,7 @@ CREATE TABLE materials (
   unit_price DECIMAL(10, 2),
   total_price DECIMAL(10, 2),
   stock_available VARCHAR(50),
-   current_stock  DECIMAL(10, 2),
+  current_stock  DECIMAL(10, 2),
   notes TEXT
 );
 SHOW CREATE TABLE materials;

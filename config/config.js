@@ -1,15 +1,14 @@
 // Load environment variables from .env file
 require("dotenv").config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = 6090;
 const DB_DETAILS = {
   connectionLimit: 10,
-  host: process.env.MYSQL_DB_HOSTNAME,
-  user: process.env.MYSQL_DB_USERNAME,
-  password: process.env.MYSQL_DB_PASSWORD,
-  database: process.env.MYSQL_DB_SCHEMA,
+  host: "containers-us-west-66.railway.app",
+  user: "root",
+  password: "FbZLTj4C6jsFBmqymF9P",
+  database: "railway",
 };
-
 module.exports = {
   PORT: PORT,
   DB_DETAILS: DB_DETAILS,
